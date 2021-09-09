@@ -29,4 +29,6 @@ let teamMember = {
     }]
 }
 
-teamMember.member.forEach(element => console.log(element.firstname));
+teamMember.member.forEach(element => {
+    console.log(element.firstname + ' ' + element.lastname)
+});
