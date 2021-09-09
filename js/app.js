@@ -29,6 +29,12 @@ let teamMember = {
     }]
 }
 
+let list = document.querySelector('#person-data');
+
 teamMember.member.forEach(element => {
+    let firstname = document.createElement('li');
+    list.appendChild(firstname).textContent = element.firstname;
+
+
     console.log(element.firstname + ' ' + element.lastname)
 });
