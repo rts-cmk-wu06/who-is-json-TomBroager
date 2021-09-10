@@ -1,4 +1,4 @@
-let teamMember = {
+{
     "member": [{
         "firstname": "Tom",
         "lastname": "Broager",
@@ -28,12 +28,3 @@ let teamMember = {
         "shoesize": 45
     }]
 }
-
-let list = document.querySelector('#person-data');
-
-teamMember.member.forEach(element => {
-    let personData = document.createElement('li');
-    list.appendChild(personData).innerHTML =
-    element.firstname + ' ' + element.lastname + '<br />'
-    + 'age: ' + element.age + ', ' + 'haircolor: ' + element.haircolor + ', ' + 'shoesize: ' + element.shoesize;
-});
