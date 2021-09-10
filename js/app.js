@@ -36,4 +36,6 @@ teamMember.member.forEach(element => {
     list.appendChild(personData).innerHTML =
     element.firstname + ' ' + element.lastname + ':' + '<br />'
     + 'age: ' + element.age + ', ' + 'haircolor: ' + element.haircolor + ', ' + 'shoesize: ' + element.shoesize;
+
+    console.log(`${element.firstname} ${element.lastname}`);
 });
