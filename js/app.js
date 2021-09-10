@@ -32,10 +32,13 @@ let teamMember = {
 let list = document.querySelector('#person-data');
 
 teamMember.member.forEach(element => {
-    let personData = document.createElement('li');
-    list.appendChild(personData).innerHTML =
+    let listItem = document.createElement('li');
+    list.appendChild(listItem);
+    listItem.textContent = `${element.firstname} ${element.lastname}`;
+
+    /* listItem.innerHTML =
     element.firstname + ' ' + element.lastname + ':' + '<br />'
-    + 'age: ' + element.age + ', ' + 'haircolor: ' + element.haircolor + ', ' + 'shoesize: ' + element.shoesize;
+    + 'age: ' + element.age + ', ' + 'haircolor: ' + element.haircolor + ', ' + 'shoesize: ' + element.shoesize; */
 
     console.log(`${element.firstname} ${element.lastname}`);
 });
