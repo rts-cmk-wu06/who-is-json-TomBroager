@@ -1,44 +1,14 @@
-let teamMember = {
-    "member": [{
-        "firstname": "Tom",
-        "lastname": "Broager",
-        "age": 52,
-        "haircolor": "blond",
-        "shoesize": 43
-    },
-    {
-        "firstname": "Jørgen",
-        "lastname": "Hansen",
-        "age": 55,
-        "haircolor": "dark",
-        "shoesize": 45
-    },
-    {
-        "firstname": "Hans",
-        "lastname": "Jensen",
-        "age": 70,
-        "haircolor": "rød",
-        "shoesize": 29
-    },
-    {
-        "firstname": "Ole",
-        "lastname": "Gokke",
-        "age": 51,
-        "haircolor": "grøn",
-        "shoesize": 45
-    }]
-}
-
 let list = document.querySelector('#person-data');
 
-teamMember.member.forEach(element => {
-    let listItem = document.createElement('li');
-    list.appendChild(listItem);
-    listItem.textContent = `${element.firstname} ${element.lastname}`;
+/* fetch promises basic */
+fetch('./team.json')
+    .then((response) => response.json())
+    .then((data) => {
+        data.member.forEach((element) => {
+            let listItem = document.createElement('li');
+            listItem.textContent = `${element.firstname} ${element.lastname + ' |'} ${'age: ' + element.age + ' |'} ${'haircolor: ' + element.haircolor + ' |'} ${'shoesize: ' + element.shoesize}`;
+            list.appendChild(listItem);
+        });
+    });
 
-    /* listItem.innerHTML =
-    element.firstname + ' ' + element.lastname + ':' + '<br />'
-    + 'age: ' + element.age + ', ' + 'haircolor: ' + element.haircolor + ', ' + 'shoesize: ' + element.shoesize; */
 
-    console.log(`${element.firstname} ${element.lastname}`);
-});
