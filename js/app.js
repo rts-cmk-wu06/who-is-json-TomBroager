@@ -34,6 +34,6 @@ let list = document.querySelector('#person-data');
 teamMember.member.forEach(element => {
     let personData = document.createElement('li');
     list.appendChild(personData).innerHTML =
-    element.firstname + ' ' + element.lastname + '<br />'
+    element.firstname + ' ' + element.lastname + ':' + '<br />'
     + 'age: ' + element.age + ', ' + 'haircolor: ' + element.haircolor + ', ' + 'shoesize: ' + element.shoesize;
 });
